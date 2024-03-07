@@ -1,45 +1,56 @@
-# SampleApp-SonarQube
+# Atividade - Realizando análise de código estático com sonarqube
+## Semana 4 - Módulo 9 - Programação
+### Livia Coutinho - Turma 3 - Engenharia de Software
 
-# Analyze Your Code Using SonarQube, Docker and .NET Core
+## Introdução
 
-This app is an example app for learning how to use SonarQube on your projects. For more details please read [Analyze Your Code Using SonarQube, Docker and .NET Core](link_to_replace) to see a detailed instruction on how to do that.
+Neste relatório será abordado o passo a passo da atividade da semana 4 em que foi implementado o SonarQube em um projeto .NET Core usando Docker, seguindo o tutorial "How to Write Cleaner, Safer Code with SonarQube, Docker and .NET Core" por Paweł Szydziak.
 
-**Prerequisites:**
+## Tecnologia e conceitos aprendidos
+- SonarQube: ferramenta de análise de código que ajuda a melhorar a qualidade e a segurança do código. Ela avalia a saúde geral de uma aplicação, destaca problemas e bugs no código e facilita a alocação de tarefas para os programadores. Com o SonarQube, é possível definir um "Quality Gate" para manter um padrão aceitável de qualidade durante o desenvolvimento. Além disso, fornece insights sobre bugs, vulnerabilidades de segurança e duplicação de código.
+- Docker: plataforma que simplifica o processo de desenvolvimento, implantação e execução de aplicativos em contêineres. Ele permite isolar aplicativos e suas dependências em contêineres, garantindo que eles funcionem consistentemente em diferentes ambientes.
+- .NET Core: framework de desenvolvimento de software gratuito e de código aberto desenvolvido pela Microsoft. Ele é multiplataforma e suporta o desenvolvimento de aplicativos web, desktop e móveis.
 
-- [Java 11](https://adoptopenjdk.net/)+
-- [Docker](https://docs.docker.com/get-docker/)
-- [.NET Core](https://dotnet.microsoft.com/download)
-- [SonarScanner for .NET Core](https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/4.7.1.2311/sonar-scanner-msbuild-4.7.1.2311-netcoreapp2.0.zip)
+## Resumo do tutorial
+O tutorial mostra como configurar e usar o SonarQube em um projeto .NET Core com Docker. Os passos incluem:
 
-**Table of Contents**
+- Preparação do ambiente
+- Configuração do projeto de exemplo
+- Execução do SonarQube em Docker
+- Instalação do SonarScanner para .NET Core
+- Análise do código
 
-- [Getting Started](#getting-started)
-- [Help](#help)
-- [License](#license)
+# Prints
 
-## Getting Started
+- Download Java
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
 
-Begin with running SonarQube on Docker:
-```sh
-docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
-```
+- Git Clone
+![alt text](image.png)
 
-**NOTE:** You'll be able to login with `admin/admin`. After first login, you will be promted to change the default credentials.
+- Rodar SonarQube no Docker
+![alt text](image-4.png)
+![alt text](image-5.png)
 
-In order to run SonarScanner, run the following commands:
+- Instalar SonarScanner para o .NET Core
+![alt text](image-6.png)
 
-```sh
-dotnet sonarscanner begin /k:"project-key" /d:sonar.login=admin /d:sonar.password=admin
-dotnet build <path_to_solution.sln>
-dotnet sonarscanner end /d:sonar.login=admin /d:sonar.password=admin
-```
+- Análise de código: dotnet sonarscanner begin /k:"project-key" /d:sonar.login=admin /d:sonar.password=admin
+![alt text](image-7.png)
 
-> **NOTE:** Remember to replace "path_to_solution" and "password" with correct ones for your example.
 
-## Help
+- Análise de código: dotnet build <path_to_solution.sln>
+![alt text](image-8.png)
+![alt text](image-9.png)
 
-Please post any questions as comments on the [blog post](link_to_replace), or visit our [Okta Developer Forums](https://devforum.okta.com/). You can also ask them on [Stack Overflow with the `sonarqube` tag](https://stackoverflow.com/tags/sonarqube).
+- Análise de código: dotnet sonarscanner end /d:sonar.login=admin /d:sonar.password=admin
+![alt text](image-10.png)
+![alt text](image-11.png)
 
-## License
+- Login Sonar
+![alt text](image-12.png)
 
-Apache 2.0, see [LICENSE](LICENSE).
+- Análise resultado
+![alt text](image-13.png)
